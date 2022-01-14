@@ -43,7 +43,7 @@ async function main () {
   }
   
  else{
-  const playlist = await spotifyToYT.playListGet(spotifyUrl)
+  const playlist = await spotifyToYT.playListGet(inputUrl)
   let playlistSongs = playlist.songs
   let dir = "./"+playlist.info.name
   
@@ -52,7 +52,7 @@ async function main () {
   }
   const downloader = new DownloadYTFile({ 
     outputPath: "./"+playlist.info.name,
-    ffmpegPath: '../../../../../Downloads/ffmpeg-n4.4-latest-win64-gpl-4.4/bin/ffmpeg.exe',
+    ffmpegPath: process.env.FFMPEG_PATH,
     maxParallelDownload: 10,
     fileNameGenerator: (videoTitle) => {
       return videoTitle + ".mp3"
