@@ -29,7 +29,7 @@ async function main () {
   if(trackOrPlaylist == "track"){
     const downloader = new DownloadYTFile({ 
       outputPath: "./",
-      ffmpegPath: process.env.FFMPEG_PATH,
+      ffmpegPath: "./ffmpeg/bin/ffmpeg.exe",
       maxParallelDownload: 10,
       fileNameGenerator: (videoTitle) => {
         return videoTitle + ".mp3"
@@ -52,7 +52,7 @@ async function main () {
   }
   const downloader = new DownloadYTFile({ 
     outputPath: "./"+playlist.info.name,
-    ffmpegPath: process.env.FFMPEG_PATH,
+    ffmpegPath: "./ffmpeg/bin/ffmpeg.exe",
     maxParallelDownload: 10,
     fileNameGenerator: (videoTitle) => {
       return videoTitle + ".mp3"
