@@ -27,6 +27,7 @@ There is no help command yet, I am still working on it. In case of any bugs plea
 
 ## Authors
 Yash Madaan (General Kenobi#6680)
+Aayush Garg 
 
 ## Version History
 
