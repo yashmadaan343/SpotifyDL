@@ -26,8 +26,8 @@ node index.js spotify-link
 There is no help command yet, I am still working on it. In case of any bugs please DM me on Discord (General Kenobi#6680)
 
 ## Authors
-Yash Madaan (General Kenobi#6680)
-Aayush Garg 
+* Yash Madaan (General Kenobi#6680)
+* Aayush Garg 
 
 ## Version History
 
