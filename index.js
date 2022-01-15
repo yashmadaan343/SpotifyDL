@@ -23,7 +23,7 @@ async function main() {
     const trackOrPlaylist = await spotifyToYT.isTrackOrPlaylist(inputUrl)
     if (trackOrPlaylist == "track") {
       const downloader = new DownloadYTFile({
-        outputPath: "./",
+        outputPath: "./downloaded/",
         ffmpegPath: "./ffmpeg/bin/ffmpeg.exe",
         maxParallelDownload: 10,
         fileNameGenerator: (videoTitle) => {
@@ -39,13 +39,13 @@ async function main() {
     else {
       const playlist = await spotifyToYT.playListGet(inputUrl)
       let playlistSongs = playlist.songs
-      let dir = "./" + playlist.info.name
+      let dir = "./downloaded/" + playlist.info.name
 
       if (!fs.existsSync(dir)) {
         fs.mkdirSync(dir);
       }
       const downloader = new DownloadYTFile({
-        outputPath: "./" + playlist.info.name,
+        outputPath: "./downloaded/" + playlist.info.name,
         ffmpegPath: "./ffmpeg/bin/ffmpeg.exe",
         maxParallelDownload: 10,
         fileNameGenerator: (videoTitle) => {
