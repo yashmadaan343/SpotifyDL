@@ -67,7 +67,7 @@ router.post('/', async (req, res) => {
             const playlist = await spotifyToYT.playListGet(req.body.link)
             let playlistSongs = playlist.songs
             const playlistId = nanoid()
-            let dir = "./downloaded/playlists/" + playlist.info.name + playlistId;
+            let dir = "../downloaded/playlists/" + playlist.info.name + playlistId;
 
             if (!fs.existsSync(dir)) {
                 fs.mkdirSync(dir);
